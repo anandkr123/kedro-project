@@ -1,0 +1,9 @@
+col: lc_cost
+
+databricks:
+  cols: ['databricks_cost']
+  clients: ['soliver', 'lsag']
+
+database:
+  cols: ['database_cost', 'sql_size']
+  clients: ['soliver', 'woehrl']
