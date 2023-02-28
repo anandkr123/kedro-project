@@ -1,5 +1,5 @@
 client,month,lc_cost,price_points,models,lifecycle_days
-butler,11,$34.00,5,50,50
+butlers,11,$34.00,5,50,50
 klauser,11,$35.00,6,50,50
 nkd,11,$36.00,7,75,75
 pucnord,11,$37.00,7,500,40

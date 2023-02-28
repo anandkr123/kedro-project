@@ -2,10 +2,11 @@
 This is a boilerplate pipeline
 generated using Kedro 0.18.5
 """
+from typing import List, Union
 
 from kedro.pipeline import Pipeline, node
 from kedro.pipeline.modular_pipeline import pipeline
-from .nodes import modify_locale, reduce_database_cols, reduce_databricks_cols
+from .nodes import modify_locale, reduce_database_cols, reduce_databricks_cols,join_all_cost
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -29,6 +30,11 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs="database_process_data",
                 name="reduce_database_cols",
             ),
-
+            node(
+                func=join_all_cost,
+                inputs=['lc_process_data', 'database_process_data', 'databricks_process_data'],
+                outputs="ipa_lifecycle_data",
+                name="join_all_cost",
+            ),
         ]
     )

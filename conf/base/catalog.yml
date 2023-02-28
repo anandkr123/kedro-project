@@ -26,3 +26,11 @@ databricks_process_data:
 database_process_data:
   type: pandas.CSVDataSet
   filepath: data/02_intermediate/database_cost.csv
+
+ipa_lifecycle_data:
+  type: pandas.CSVDataSet
+  filepath: data/04_feature/ipa_cost.csv
+
+model:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/model.pkl
